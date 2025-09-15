@@ -6,8 +6,8 @@
   --bg-black-50: #e8dfec;
   --text-black-900: #302e4d;
   --text-black-700: #504e70;
-  /* ⚠️ you’re using var(--skin-color) below but it’s not defined */
-  /* Example: --skin-color: #ff5c00; */
+  /* ⚠️ You’re using var(--skin-color) below but didn’t define it */
+  --skin-color: #ff5c00; /* ✅ Added so your borders & active color show */
 }
 
 body {
@@ -34,8 +34,8 @@ ul {
   background: var(--bg-black-900);
   min-height: 100vh;
   display: block;
-  position: relative; 
-  margin-left: 270px; 
+  position: relative; /* ✅ fixed (was fixed before) */
+  margin-left: 270px; /* ✅ aside offset */
   top: 0;
   right: 0;
   z-index: 0;
@@ -44,12 +44,13 @@ ul {
 
 .aside {
   width: 270px;
-  background: var(--bg-black-100); /* valid variable */
+  background: var(--bg-black-100); /* ✅ corrected variable name */
   position: fixed;
   left: 0;
   top: 0;
   padding: 30px;
   height: 100%;
+  border-right: 1px solid var(--bg-black-50);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,6 +100,28 @@ ul {
   right: 0;
 }
 
+.aside .nav-toggler {
+  height: 40px;
+  width: 45px;
+  border: 1px solid var(--bg-black-50);
+  cursor: pointer;
+  position: fixed;
+  left: 300px;
+  top: 20px;
+  border-radius: 5px;
+  background: var(--bg-black-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aside .nav-toggler span {
+  height: 2px;
+  width: 18px;
+  background-color: var(--skin-color);
+  display: inline-block;
+}
+
 .aside .nav {
   margin-top: 50px;
 }
@@ -115,4 +138,12 @@ ul {
   border-bottom: 1px solid var(--bg-black-50);
   color: var(--text-black-900);
   padding: 5px 15px;
+}
+
+.aside .nav li a.active {
+  color: var(--skin-color);
+}
+
+.aside .nav li a i {
+  margin-right: 15px;
 }
