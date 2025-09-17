@@ -6,6 +6,7 @@
   --bg-black-50: #e8dfec;
   --text-black-900: #302e4d;
   --text-black-700: #504e70;
+  /* keep --skin-color untouched (you’ll define it elsewhere) */
 }
 
 body {
@@ -31,16 +32,16 @@ ul {
 .section {
   background: var(--bg-black-900);
   min-height: 100vh;
-  display: block;
-  position: relative;
-  margin-left: 270px; 
+  display: block; 
   padding: 0 30px;
-  top: 0;
-  right: 0;
-  z-index: 0;
   opacity: 1;
 }
-
+.hidden {
+  display: none !important;
+}
+.main-content {
+  padding-left: 300px;
+}
 .padd-15 {
   padding-left: 15px;
   padding-right: 15px;
@@ -51,7 +52,40 @@ ul {
   width: 100%;
   margin: auto;
 }
-
+.section .container {
+  padding-top: 60px;
+  padding-bottom: 70px;
+}
+.section-title {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 60px;
+}
+.section-title h2 {
+  font-size: 40px;
+  color: var(--text-black-900);
+  font-weight: 700;
+  position: relative;
+}
+.section-title h2::before {
+  content: '';
+  height: 4px;
+  width: 50px;
+  background-color: var(--skin-color);
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+.section-title h2::after {
+  content: '';
+  height: 4px;
+  width: 25px;
+  background-color: var(--skin-color);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+}
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -59,7 +93,21 @@ ul {
   margin-right: -15px;
   position: relative;
 }
-
+.btn {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 35px;
+  color: white;
+  border-radius: 40px;
+  display: inline-block;
+  white-space: nowrap;
+  border: none;
+  background: var(--skin-color);
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
 .aside {
   width: 270px;
   background: var(--bg-black-100);
@@ -175,7 +223,8 @@ ul {
   padding: 5px 15px;
 }
 
-.aside .nav li a.active {
+.aside .nav li a.active,
+.aside .nav li a:hover {
   color: var(--skin-color);
 }
 
@@ -193,23 +242,79 @@ ul {
   flex: 0 0 60%;
   max-width: 60%;
 }
-h3.hello{
+h3.hello {
   font-size: 28px;
-  margin: 15px;
+  margin-bottom: 15px;
 }
-h3.hello span{
+h3.hello span {
   font-family: 'Clicker Script', cursive;
   font-size: 30px;
   font-weight: 700;
   color: var(--skin-color);
 }
+h3.my-profession {
+  font-size: 30px;
+  margin: 15px 0;
+}
+.typing {
+  color: var(--skin-color);
+}
+.home-info p {
+  margin-bottom: 70px;
+  font-size: 20px;
+  color: var(--text-black-700);
+}
 .home .home-img {
   flex: 0 0 40%;
   max-width: 40%;
   text-align: center;
+  position: relative;
 }
-
+.home-img::after {
+  content: '';
+  position: absolute;
+  height: 80px;
+  border-bottom: 10px solid var(--skin-color);
+  border-right: 10px solid var(--skin-color);
+  width: 80px;
+  right: 20px;
+  bottom: -40px;
+}
+.home-img::before {
+  content: '';
+  position: absolute;
+  height: 80px;
+  border-top: 10px solid var(--skin-color);
+  border-left: 10px solid var(--skin-color);
+  width: 80px;
+  left: -20px;
+  top: -40px;
+}
 .home-img img {
-  height: 400px;
-  display: inline-block;
+  margin: auto;
+  border-radius: 5px;
+  height: auto;
+  max-width: 100%;
+}
+.about .about-content {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.about .about-content .about-text {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.about .about-content .about-text h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: var(--text-black-900);
+}
+.about .about-content .about-text h3 span {
+  color: var(--skin-color);
+}
+.about .about-content .about-text p {
+  font-size: 16px;
+  line-height: 25px;
+  color: var(--text-black-700);
 }
