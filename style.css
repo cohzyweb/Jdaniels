@@ -6,7 +6,7 @@
   --bg-black-50: #e8dfec;
   --text-black-900: #302e4d;
   --text-black-700: #504e70;
-  /* keep --skin-color untouched (define it separately) */
+  /* keep --skin-color untouched */
 }
 
 body {
@@ -122,6 +122,10 @@ ul {
   transform: scale(1.05);
 }
 
+.shadow-dark{
+  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+
 /* Sidebar */
 .aside {
   width: 270px;
@@ -134,23 +138,34 @@ ul {
   border-right: 1px solid var(--bg-black-50);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
+  flex-direction: column;
   z-index: 10;
 }
 
+/* Logo container updated for image */
 .aside .logo {
-  position: absolute;
-  top: 50px;
-  font-size: 30px;
-  text-transform: capitalize;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
+.aside .logo img {
+  display: block;
+  max-width: 150px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Keep text logo styling */
 .aside .logo a {
   color: var(--text-black-900);
   font-weight: 700;
-  padding: 15px 20px;
   font-size: 30px;
   letter-spacing: 5px;
+  text-transform: capitalize;
+  display: inline-block;
+  padding: 15px 20px;
   position: relative;
 }
 
@@ -221,7 +236,8 @@ ul {
 }
 
 .aside .nav {
-  margin-top: 50px;
+  width: 100%;
+  margin-top: 30px;
 }
 
 .aside .nav li {
@@ -322,12 +338,11 @@ h3.my-profession {
   max-width: 100%;
 }
 
-/* About */
+/* About Section */
 .about .about-content {
   flex: 0 0 100%;
   max-width: 100%;
 }
-
 .about .about-content .about-text {
   flex: 0 0 100%;
   max-width: 100%;
@@ -437,4 +452,17 @@ h3.my-profession {
   margin-bottom: 30px;
   font-weight: 700;
   color: var(--text-black-900);
+}
+.about .about-content .timeline-box{
+  flex: 0 0 100%;
+  math-depth: 100%;
+}
+.about .about-content .timeline{
+  background-color: var(--bg-black-100);
+  padding: 30px 15px;
+  border: 1px solid var(--bg-black-50);
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+  margin-top: 30px;
 }
